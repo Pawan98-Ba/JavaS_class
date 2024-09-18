@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>BMI Calculator</h1>
+    <form id="form" action="">
+        <div>
+            <label for="">Enter your Hight in Centi-meter(C.M)</label>
+            <input type="text" placeholder="Hight" id="height"> 
+        </div>
+        <div>
+            <label for="">Enter your Weight in Kilo-gram(K.G)</label>
+            <input type="text" placeholder="Weight" id="weight"> 
+        </div>
+        <div>
+            <button id="button">submit</button>
+        </div>
+        <div>
+            <p id="display"></p>
+        </div>
+    </form>
+
+        <div>
+            <h2>BMI Guide</h2>
+            <ul>
+                <li>Under Weight = Less than 18.6</li>
+                <li>Normal Range = 18.6 to 24.9</li>
+                <li>Overweight = Greater than 24.9</li>
+            </ul>
+        </div>
+
+        <script>
+            let form = document.getElementById("form");
+            let weight = document.getElementById("weight");
+            let hight = document.getElementById("height");
+            let button = document.getElementById("button");
+            let p = document.getElementById("display");
+
+            form.addEventListener("submit",function(event){
+                event.preventDefault();
+              
+                let bmi = ((weight.value / (hight.value*hight.value))*10000);
+                if(weight.value=="" && height.value=="" ){
+                     alert( "Please enter the above data completely");
+                }
+                else if(weight.value=="" ){
+                    alert( "Please enter the weight data");
+                }
+                else if(isNaN(weight.value) || isNaN(height.value)){
+                    alert("enter a valid number");
+                }
+                else if(height.value==""){
+                    alert( "Please enter the height");
+                }
+                else if(weight.value<=0 && height.value<=0 ){
+                    alert("Your height and weight must be positive");
+                }
+                else if(weight.value<=0){
+                    alert("Your weight must be positive");
+                }
+                else if(height.value<=0){
+                    alert("Your height must be positive");
+                }
+                else{
+                    if(bmi<18.6){
+                        p.innerHTML = "You are under weight clocking : "+bmi;
+                   
+                    }
+                    else if(bmi>18.6 && bmi<24.9){
+                        p.innerHTML = "You are in normal range clocking : "+bmi;
+                    }
+                    else{
+                        p.innerHTML = "You are over weight clocking : "+bmi;
+                    }
+                }
+                weight.value="";
+                hight.value="";
+            })
+        </script>
+    </form>
+</body>
+</html>

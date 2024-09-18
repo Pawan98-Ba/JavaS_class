@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html,body{
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            background-color: rgb(66, 66, 203);
+        }
+        h1{
+            font-weight: 500;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .main{
+            display: flex;
+            gap:40px;
+        }
+        .signin,.login{
+            margin-top: 14vh;
+            background-color: white;
+            width: 30vw;
+            height: 70vh;
+            border-radius: 10px;
+        }
+        .signin{
+            margin-left: 18vw;
+
+        }
+        .blocker{
+            display: flex;
+            flex-direction: column;
+            gap:20px;
+        }
+        .block{
+            display: flex;
+            flex-direction: column;
+            gap:2px;
+        }
+        .block label{
+            font-size: 19px;
+            font-weight: 300;
+            color: rgb(130, 130, 130);
+            text-align: center;
+        }
+        .block input{
+           width: 85%;
+           height: 40px;
+           margin-left: 30px;
+           border-radius: 5px;
+           border-color: rgb(66, 66, 203);
+        }
+        input:focus{
+            outline-color: rgb(66, 66, 203) ;
+        }
+        button{
+            margin-top: 40px;
+            width: 85%;
+           height: 40px;
+           margin-left: 30px;
+           border-radius: 5px;
+           border-color: rgb(66, 66, 203);
+           background-color:rgb(66, 66, 203) ;
+           color:white;
+           font-size: 17px;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+
+        <div class="signin">
+            <div>
+                <h1>SignIn your account</h1>
+            </div>  
+            <div class="blocker">
+                <div class="block">
+                    <label for="">Create your Email</label>
+                    <input type="text" id="email">
+                </div>
+                <div class="block">
+                    <label for="">Create your Password</label>
+                    <input type="password" id="password">
+                </div>
+                <div>
+                    <button onclick="sign()">SignIn</button>
+                </div>
+            </div>         
+        </div>
+
+        <div class="login">
+            <div>
+                <h1>LogIn your account</h1>
+            </div>
+            <div class="blocker">
+                <div class="block">
+                    <label for="">Email</label>
+                    <input type="text" id="email1">
+                </div>
+                <div class="block">
+                    <label for="">Password</label>
+                    <input type="password" id="password1">
+                </div>
+                <div>
+                    <button onclick="log()">LogIn</button>
+                </div>
+            </div> 
+        </div>
+
+    </div>
+    <script>
+
+        let array = [];
+        let email = document.getElementById('email');
+        let pass = document.getElementById('password');
+        let email1 = document.getElementById('email1');
+        let pass1 = document.getElementById('password1');
+
+        function sign(){
+            if(email.value=="" || pass.value==""){
+                alert("please enter the data");
+            }
+            
+
+            else{
+            array.push(email.value);
+            array.push(pass.value);
+            email.value="";
+            pass.value="";
+            }
+        }
+        function log(){
+           let em = email1.value;
+           let pm = pass1.value;
+           if (array.includes(em) && array.includes(pm)){
+                window.location="https://www.facebook.com/EEEinnovation/";
+           }
+           else{
+            alert("There is a mistake in data entry");
+           }
+           email1.value="";
+           pass1.value="";
+
+        }
+    </script>
+</body>
+</html>

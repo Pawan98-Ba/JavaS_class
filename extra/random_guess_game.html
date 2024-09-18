@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>game</title>
+</head>
+<body>
+    <input type="text" id="check">
+    <button onclick="game()">Submit</button>
+    <script>
+            let k = 0;
+            let hold = document.getElementById("check");
+            let random = Math.floor( Math.random()*100);
+            console.log(random);
+
+        function game(){
+            
+            let value = hold.value;
+          
+            if(value>random){
+                alert("Your guess in greater");
+                k++;
+            }
+            else if(value<random){
+                alert("your guess is smaller");
+                k++;
+            }
+            else{
+                k++;
+                alert("you succeed in "+k);
+               
+
+            }
+            hold.value = "";
+        }
+                                    // eval her 
+        
+
+            
+        
+
+    </script>
+</body>
+</html>

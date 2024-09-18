@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> target Document</title>
+    <style>
+        .parent{
+            display: flex;
+         
+        }
+        .f{
+            height: 200px;
+            width: 200px;
+        }
+        #red{
+            background-color: red;
+        }
+        #blue{
+            background-color: blue;
+        }
+        #green{
+            background-color: green;
+        }
+        #black{
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+    <div class="parent" id="baap">
+        <div class="f" id="red"> </div>
+        <div class="f" id="blue"></div>
+        <div class="f" id="green"></div>
+        <div class="f" id="black"></div>
+    </div>
+    <!-- <button id="yeta">yeta click</button> -->
+    <script>
+
+        let box = document.getElementsByClassName("f");
+
+        let arr = Array.from(box);  // array.from() convert obj to array
+        arr.forEach((data)=>{
+            data.addEventListener("click",function(event){
+                if(event.target.id=="red"){
+                    document.body.style.backgroundColor = "red";
+                }
+                else if(event.target.id=="blue"){
+                    document.body.style.backgroundColor = "blue";
+                }
+                else if(event.target.id=="green"){
+                    document.body.style.backgroundColor = "green";
+                }
+                else{
+                    document.body.style.backgroundColor = "black";
+                    
+                }
+            })
+        })
+        // console.log(typeof(box));
+        // for(let i = 0 ; i<box.length;i++){
+        //     console.log(box[i]);
+        // }
+        
+    //target
+
+        // let but = document.getElementById("yeta");
+        // but.addEventListener("click",function(event){
+        //     console.log(event.target);
+        // })
+    </script>
+</body>
+</html>

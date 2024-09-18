@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //arrowfunction is short hand of function
+        //suntax  ()=> {}
+        // function add(){
+        //     console.log(4+5);
+        // }
+        // add();
+
+        // let a = () => {
+        //     console.log(4+5);
+        // }
+        // a();
+         
+        //using arrow function 
+
+                            //sum of first 20 number
+        let sum = () => {
+            let i=1;
+            let sum=0;
+            while( i<=20){
+                sum+=i;
+                i++;
+            }
+            console.log(sum);
+        }
+        sum();
+                            //find perimeter of rect by passing value
+            let l = +prompt("enter length");
+            let b = +prompt("enter breadth");
+            let peri = (l,b) => {
+                let per = 2*(l+b);
+                console.log("perimeter = "+per);
+            }
+
+            peri(l,b);
+
+    </script>
+</body>
+</html>

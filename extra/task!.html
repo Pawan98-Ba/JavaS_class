@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-image: url(https://thumbs.dreamstime.com/b/dark-blue-background-texture-12018606.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        *{
+            margin: 0%;
+            padding: 0%;
+            box-sizing: border-box;
+        }
+        .main{
+            display: grid;
+            grid-template-columns: auto auto auto;
+        }
+        .display{
+            margin-left: 5vw;
+            margin-top: 5vw;
+            grid-column: 1 / span 3;
+            height: 40vh;
+            background-color: rgb(176, 200, 220);
+            width: 70vw;
+            border-radius: 2%;
+
+        }
+        .display p {
+            font-size: 240px;
+            text-align: center;
+            color: rgb(48, 48, 48);
+
+        }
+        .shape{
+            background-color: rgb(48, 48, 48);
+            width: 80vw;
+            height: 80vh;
+            border-radius: 4%;
+
+        }
+        .buttons{
+             margin-top: 5vw;
+            margin-left: 8vw;
+        }
+        button{
+            height: 10vh;
+            width: 10vw;
+            font-size: 20px;
+            border-radius: 20%;
+            background-color: black;
+            color:white;
+            border: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="shape">
+        <div class="main">
+            <div class="display">
+                <p id="display"></p>
+            </div>
+            <div class="buttons">
+                <button id="start">Start</button>
+            </div>
+            <div class="buttons">
+                <button id="stop">Stop</button>
+            </div>
+            <div class="buttons">
+                <button id="reset">Reset</button>
+            </div>
+        </div>
+    </div>
+   
+
+    <script>
+        let strt = document.getElementById("start");
+        let stp = document.getElementById("stop");
+        let rest = document.getElementById("reset");
+        let display = document.getElementById("display");
+        let num = 0; 
+        let increment = 0;
+        let count = () => {
+          
+            increment = setInterval(()=>{
+                num++;
+                display.innerHTML = num;
+            },1000);
+            console.log(typeof(increment));
+        }
+
+        let hold = () => {
+            clearInterval(increment);
+        }
+        
+        let onset = () => {
+            num = 0;
+            display.innerHTML = "";
+            clearInterval(increment);
+        }
+     
+        strt.addEventListener('click',()=>{
+            count();
+        })
+        stp.addEventListener('click',()=>{
+            hold();
+        })
+        rest.addEventListener('click',()=>{
+            onset();
+        })
+    </script>
+</body>
+</html>

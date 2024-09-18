@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1{
+            text-align: center;
+            text-decoration: underline;
+            margin-bottom: 200px;
+            font-size: 52px;
+        }
+        form{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap:20px;
+        }
+        label{
+            font-size: 32px;
+        }
+        input{
+            width: 300px;
+            height: 50px;
+            padding-left:30px ;
+        }
+        input:focus{
+            outline-color: red;
+        }
+        button{
+            width: 220px;
+            height: 50px;
+            font-size: 22px;
+            color: white;
+            background-color: #ccc;
+            border: none;
+            border-radius: 50px;
+        }
+        button:hover{
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>Here is the data of 10 person</h1>
+    </div>
+    <div>
+        <form id="form" action="promise_task.html">
+            <label for="">Enter the id number of person you want to see data</label>
+            <input type="number" placeholder="ID" id="id">
+            <button id="button">submit</button>
+        </form>
+    </div>
+    
+    <script>
+        let localnumber = document.getElementById("id");
+        let form = document.getElementById("form");
+        let but = document.getElementById("button");
+
+        form.addEventListener("submit",function(event){
+            let num = Number(localnumber.value);
+            if(num>10 || num<1 ){
+                event.preventDefault();
+                alert("We dont have the data of that person");
+            }
+            // else if(num=""){
+            //     event.preventDefault();
+            //     alert("You inserted null number");
+            // }
+            else{
+                localStorage.setItem("num",num);
+                localnumber.value="";
+            }
+        })
+       
+    </script>
+</body>
+</html>

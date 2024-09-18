@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="calculator.css">
+</head>
+<body>
+   <div class="push">
+    <div class="main">
+        <div class="display">
+            <p id="display"></p>
+        </div>
+        <div class="flexer">
+            <div>
+                <button onclick="erase()">C</button>
+            </div>
+            <div>
+                <button onclick="deletee()">Del</button>
+            </div>
+            <div>
+                <button onclick="display('%')">%</button>
+            </div>
+            <div class="last">
+                <button onclick="display('÷')"><i class="fa-solid fa-divide"></i></i></button>
+            </div>
+        </div>
+        <div class="flexer">
+            <div>
+                <button onclick="display('7')">7</button>
+            </div>
+            <div>
+                <button onclick="display('8')">8</button>
+            </div>
+            <div>
+                <button onclick="display('9')">9</button>
+            </div>
+            <div class="last">
+                <button onclick="display('×')">x</button>
+            </div>
+        </div>
+        <div class="flexer">
+            <div>
+                <button onclick="display('4')">4</button>
+            </div>
+            <div>
+                <button onclick="display('5')">5</button>
+            </div>
+            <div>
+                <button onclick="display('6')">6</button>
+            </div>
+            
+            <div class="last">
+                <button onclick="display('-')">-</button>
+            </div>
+        </div>
+        <div class="flexer">
+            <div>
+                <button onclick="display('1')">1</button>
+            </div>
+            <div>
+                <button onclick="display('2')">2</button>
+            </div>
+            <div>
+                <button onclick="display('3')">3</button>
+            </div>
+            <div class="last">
+                <button onclick="display('+')">+</button>
+            </div>  
+        </div>
+        <div class="flexer">
+            <div class="extend">
+                <button onclick="display('0')">0</button>
+            </div>
+            <div>
+                <button onclick="display('.')">.</button>
+            </div>
+            <div class="last">
+                <button onclick="calculation()">=</button>
+            </div>
+        </div>
+    </div>
+   </div>
+ 
+    <script>
+        let hold = document.getElementById("display");
+        let string="0";
+        let k = 1;
+        hold.innerHTML = string; 
+        function display(num){
+            if(k==1){
+                string="";
+                k++;
+            }
+            string+=num;
+            hold.innerHTML = string;
+        }
+        function erase(){
+            string="0";
+            hold.innerHTML = string;
+            k=1;
+        }
+        function deletee(){
+            string=string.slice(0,-1);
+            hold.innerHTML = string;
+            if(string==""){
+                string="0";
+                hold.innerHTML = string;
+                k=1;
+            }
+        }
+
+        function calculation(){
+            string = string.replace("×","*");
+            string = string.replace("÷","/");
+            string = eval(string);
+            hold.innerHTML = string;       
+        }
+        console.log(string);
+    </script>
+      
+</body>
+</html>

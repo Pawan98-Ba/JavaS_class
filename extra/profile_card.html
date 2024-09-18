@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0%;
+            margin: 0%;
+            box-sizing: border-box;
+        }
+        body{
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+        .baap{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            width: 100vw;
+            background-color: rgb(111, 54, 255);
+        }
+        img{
+            border-radius: 50%;
+            width: 90%;
+            height: 90%;
+        }
+        .upper_profile_img{
+            width: 200px;
+            height: 200px;
+            border: 4px solid purple;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            margin-top: 30px;
+            margin-bottom: 30px;
+            align-items: center;
+        }
+        .upper_profile{
+            background-color: aliceblue;
+        }
+        .profile_card{
+            width: 450px;
+            height: 600px;
+            display: flex;
+            background-color: aliceblue;
+            flex-direction: column;
+            /* justify-content: center; */
+            align-items: center;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        .lower_profile{
+            background-color: rgb(95, 95, 95);
+            width: 450px;
+            display: flex;
+            flex-direction: column;
+            gap:4px;
+            align-items: center;
+            padding-top: 10px;
+            height: 400px;
+        }
+        span{
+            color: white;
+        }
+        .lower_profile_name{
+            font-size: 23px;
+            padding-bottom: 4px;
+        }
+        .lower_profile_button{
+            display: flex;
+            gap:20px;
+        }
+        button{
+            width: 100px;
+            height: 30px;
+            color: white;
+            background-color: rgb(49, 49, 49);
+            border-radius: 6px;
+            border: none;
+        }
+        button:hover{
+            background-color: rgb(39, 39, 39);
+            cursor: pointer;
+        }
+        .hr{
+            width: 100%;
+            border: 2px solid rgb(28, 28, 28);
+        }
+
+        .lower_profile_skill{
+           width: 450px;
+           height: 200px;
+        }
+        .lower_profile_bio{
+            /* margin-left: 20px; */
+            text-align: center;
+            /* color: #be0505; */
+        }
+        .lower_profile_bio span{
+            color: #ccc;
+        }
+        .skill_set{
+            width: 100%;
+            height: 100%;
+            padding: 10px;
+            display: grid;
+            grid-template-columns: auto auto;
+            font-size: 18px;
+            color: white;
+        }
+        h2{
+            padding: 10px 0px 5px 10px;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="baap" id="baap">
+        
+    </div>
+
+    <script>
+        const obj = {
+                "img": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAPFBMVEXk5ueutLepsLPo6uursbXJzc/p6+zj5ea2u76orrKvtbi0ubzZ3N3O0dPAxcfg4uPMz9HU19i8wcPDx8qKXtGiAAAFTElEQVR4nO2d3XqzIAyAhUD916L3f6+f1m7tVvtNINFg8x5tZ32fQAIoMcsEQRAEQRAEQRAEQRAEQRAEQRAEQRAEQRAEQRAEQTghAJD1jWtnXJPP/54IgNzZQulSmxvTH6oYXX4WS+ivhTbqBa1r26cvCdCu6i0YXbdZ0o4A1rzV+5IcE3YE+z58T45lqo7g1Aa/JY5tgoqQF3qb382x7lNzBLcxft+O17QUYfQI4IIeklKsPSN4i6LKj/7Zm8n99RbHJpEw9gEBXNBpKIYLJqKYRwjOikf//r+J8ZsVuacbqCMNleI9TqGLGqMzhnVdBOdd6F/RlrFijiCoVMk320CBIahUxTWI0KKEcJqKbMdpdJb5QvdHq6wCI5qhKlgGMS/RBHkubWDAE+QZxB4xhCyDiDkLZxgGEVdQldzSKbTIhmZkFkSEPcVvmBn2SMuZB9od7fQDsMiDdKJjFUSCQarM5WirZ3C2TT/htYnyPcPfgrFHWz0BI74gr6J/IZiGUxAZGQLqmvQLTrtE/Go4YxhVRIpEw+sww1IIcqr5NKmUUzLF3d4/qPkYIp2T/obPuemlojFUR4t9Q2Vojhb7BmgElWHzLPH8hucfpefPNFTVgs9h1AdU/Pin96vwWbWdf+X9Absn3OdO34aMdsDnP8WgKYisTqI6CkNGqZQo1XA6Ef6AU32SJzOcBukHPF07/xNSgmHKa5BOhtezv6mA/rYJpwXNAnbRZ1XuF3BzDcO3vpA3+ny2909gbqE4hhD3LIPhLLyBNhPZvbZ3B+3tPYa18A7auSlXQayKwTPNLKDcuOB0xPYKDPFTkWsevQPRZ1J8Hji9I1KQ34r7hZhrwNwOZ97QxNx0drwn4QI0wQk1DcEsfKCWKdxVvxPSNUIp/knmAXT+nT+Ko3+0H96rcNb3m1fx7MBTJdeBJ7uFcWsc0wvgAsC4pROW0l2inbAmIBv/7GZmuhQH6API2rr8T0e6yuZJ+80A9LZeG62T3tik31XwxtwZcizKuTHkMjB1WdZde4Kmic/A5ZI3rr1ae21d08PlVHYfAaxw9G9CYRbJ+8ZdbTcMRV1XM3VdF0M32vtoTdZ0+u29s0OttJ5bz64UwinjaFMVY9vkqc3KKSxN21Xl+0L4Q3Vuv1tYl0pqnX6ms4XetFz7gdZVAgUEoJntfOUe4ZwsHd9FzqQ3Vv6xe41l0XJcqcKl6TZvlv7ClAW3BsqQW4X7ypApB8dmTgK4IX5wvqIVj33HtD2qSG4BqznxdIefL27Y4sahi0MdIdvUsDva8agGGbCtITmCY31MHD2O0uIdh/0rJDQ1VX5Zdxz3rR2QDbv6qXl9vudzqQtGm1Jv9LDXOsfvvB7VcZ8PDKD0mQ1VHPYQ9O+Yj4hR1IUD8rBnn3ho2m8oQMxbCFiKlL2ioSW5heeJqegED52CzxCtcGD3Kv8Wms9EYLyUhwaFIhSMBClevWEmiK/Iaogu4H7sg6ppQhQG8RUqivuTGOAJOg6FfgW0q0M0PQMRMEgXaeNf3SYDZ8PIMI0+wHgr/MgN7wYwpiLjCCqM6ydUDZLQiB6nDdNC8SDyig3jPPpFXGcC9O8BUBDVmgBY59E7Md/35Loe/UVEECEJwYggJjELZ4J71SaQSBeC02n4Da29CayJNA28SAhd2CQyC1Xw6pSmGSINQVuMhAZp4DClan9MgmkDDNmezqwS8sgtlXK/EPBhoaSmYVC/F7IO1jQEdHOlabpKh3+jzLQSTUiq4X2I+Ip/zU8rlaqAvkS21ElR+gqu3zbjjL+hIAiCIAiCIAiCIAiCsCf/AKrfVhSbvA+DAAAAAElFTkSuQmCC",
+                "name": "Sarah Connor",
+                "role": "Web Developer",
+                "bio": "Passionate about building responsive and user-friendly websites.",
+                "skills": ["HTML", "CSS", "JavaScript", "React"]
+        };
+        function display(obj){
+            let baap = document.getElementById("baap");
+            baap.innerHTML = card(obj);
+        }
+        display(obj);
+        function card(obj){
+            return `
+                <div class="profile_card">
+            <div class="upper_profile">
+                <div class="upper_profile_img">
+                    <img src="${obj.img}" alt="">
+                </div>
+            </div>
+            <div class="lower_profile">
+                <div class="lower_profile_name">
+                    <span>${obj.name}</span>
+                </div>
+                <div class="lower_profile_role">
+                    <span>${obj.role}</span>
+                </div>
+                <div class="lower_profile_bio">
+                    <span>${obj.bio}</span>
+                </div>
+                <div class="lower_profile_button">
+                    <div>
+                        <button>Message</button>
+                    </div>
+                    <div>
+                        <button>Follow</button>
+                    </div>
+                </div>
+                <hr class="hr">
+                <div class="lower_profile_skill">
+                    <div>
+                        <h2>Skills</h2>
+                        <div class="skill_set" id="skill">
+                          
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+            
+            `;
+        }
+        let hold = document.getElementById("skill");
+        let skil = obj.skills;
+        skil.forEach((value)=>{
+            let div = document.createElement("div");
+            div.innerText = value;
+            hold.appendChild(div);
+        })    
+    </script>
+</body>
+</html>

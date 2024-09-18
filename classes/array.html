@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="add()">Add</button>
+    <button onclick="remove()">Delete</button>
+    <button onclick="display()">Display</button>
+    <h1 id="hero"></h1>
+    <script>
+        //syntax
+        // array = []
+        // example : let a = [1,"hello"]
+        //insertion of array : a[2]="hellooo"  | a.push(3)(push adds the data)|| a.pop() takes out 3 as 3 lies in last place
+        // accessing of array : a[0]: 1
+        // let a = [1,2,"killer","88"];
+        // for (let i=0;i<a.length;i++){
+        //     document.write("<br>"+a[i]);
+        // }
+
+        // create a function named listadd with parameter data , and should add in array globally && and another function to delete data
+        /*
+        let hero = document.querySelector("#hero");
+        let array = [];
+        function add(){
+            let adding = prompt("Give data for array");
+            array.push(adding);
+        }
+        function remove(){
+            array.pop();
+        }
+        function display(){
+            // for(let i=0;i<array.length;i++){
+            //     hero.innerHTML+=array[i];
+            // }
+            hero.innerHTML=array;
+        }
+            */
+           
+        // method of array 
+        //    push pop shift unshift length sort include indexof splice slice,join
+
+        //shift & unshift(queue FIFO)
+        //unshift to add first index(51)
+        //shift remove the first inder(53)
+        // join : joins the array to stirng(59)
+        // include checks the array to have data or not (55)
+        // concat joins the two array(61)
+        // splice -> insert or delete element from array in any index){change the original array}(64)
+        // slice ->  delete element from array in any index){no change the original array}()
+        //window.location="" redirect to any page
+        //indexof gives the index of array element
+
+        // let a = [1,"pawan",34];
+        // a.unshift("killer");
+        // console.log(a);
+        // let b = a.shift();
+        // console.log(b);
+        // let res = a.includes("pawan");
+        // console.log(res);
+        // console.log(a.join(" and "));
+        //let o = [12,12];
+        //console.log(a.concat(b));
+        
+        // let array = [1,2,"kill"];
+        // array.splice(2,1);// 2 is index // 1 is no.of data erased
+        // array.splice(2,1,"killer");// 2 is index // 1 is no.of data erased // killer is add
+        
+        // console.log(array);
+        // let arr=[2,"hello",3,"bye",undefined];
+        // let or = arr.indexOf(2);
+        // console.log(or);
+        // arr.splice(2,2,"big","data");
+        // console.log(arr);
+
+        // let rearr = arr.slice(1,4); // 1 is hello // 4 bye as 4 reconsider 3
+        // console.log(rearr);// gives the takeout
+         </script>
+</body>
+</html>

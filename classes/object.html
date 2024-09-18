@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object</title>
+</head>
+<body>
+    <script>
+        //everything is object
+        //object are collection of attribute and methods
+
+
+        // let a = {
+        //     id : "1",
+        //     name : "namu",
+        // };
+        //there is two wAY TO access daaata in object
+        // console.log(a["id"]);
+        // console.log(a.id);
+
+        // insert new keyvalue
+        // a.greet = "hello";
+        // console.log(a);
+
+        //Objext.keys(object_name)
+        //Objext.entries(object_name)
+        //Objext.values(object_name)
+
+        // console.log(Object.keys(a));
+
+
+        // let school = {
+        //     name : "gajurmukhee",
+        //     address : "ramkot",
+        //     level : "high_level"
+        // };
+        // console.log("name of school : "+school.name);
+        // console.log("Address of school : "+school.address);
+        // console.log("level of school : "+school.level);
+
+
+        // let age = {
+        //     a :1,
+        //     b :20,
+        //     c:40,
+        //     d:10,
+        // };
+        // let sum = 0;
+        // for ( let n in age){
+        //     sum+=age[n]; 
+        // }
+        // console.log(sum);
+
+        //make collection of object (id,product,description,price )
+        
+    //     let obj_ect = [
+    //         {
+    //             id:"1",
+    //             product:"real",
+    //             descripition:"juice ho",
+    //             price:"25",
+
+    //          },
+    //          {
+    //             id:"2",
+    //             product:"wai-wai",
+    //             descripition:"noodles",
+    //             price:"20",
+
+    //          },
+    //          {
+    //             id:"3",
+    //             product:"oreo",
+    //             descripition:"biscuit",
+    //             price:"25",
+    //          },
+    //          {
+    //             id:"4",
+    //             product:"curent",
+    //             descripition:"piro_noodle",
+    //             price:"50",
+    //          },
+    // ]
+    // for (let i = 0;i<obj_ect.length;i++){
+    //     console.log(obj_ect[i].descripition);
+    // }
+
+    //1)create object of book of property(title, author, pages) show title and modify the pages 
+    //and add publisher
+        // let book = {
+        // title : "Karnali Blues",
+        // author : "Buddhisagar",
+        // page : 402,
+        // };
+        // console.log("The title of book is "+book.title);
+        // book.page = 400;
+        // console.log("The modified page number is "+book.page);
+        // book.publisher = " FinePrint publication, Nepal";
+        // console.log("The book is published by "+book.publisher);
+
+    //2)function that count the property of object
+        // let obj_ect = {
+        //     title : "Karnali Blues",
+        //     author : "Buddhisagar",
+        //     page : 400,
+        //     publisher : "FinePrint publication, Nepal",
+        // };
+        // let count = () => {
+        //     let c = 0;
+        //     for(key in obj_ect){
+        //         c++;
+        //     }
+        //     console.log("the number of properties = "+c);
+        // }
+        // count();
+
+    //3)function that uppercase the string in object
+        // let obj_ect = {
+        //     title : "Karnali Blues",
+        //     author : "Buddhisagar",
+        //     page : 400,
+        //     publisher : "FinePrint publication, Nepal",
+        // };
+        // let upper = () => {
+        //     for (key in obj_ect){
+        //         if(typeof(obj_ect[key]) == "string"){
+        //             let big = obj_ect[key].toUpperCase();
+        //             obj_ect[key] = big;
+        //         }
+        //     }
+        // }
+        // upper();
+        // console.log(obj_ect);
+
+
+        // object methods
+
+         // for of use
+        //  let r = {
+        //     name:"pawan",
+        //     cast:"bamjan",
+        //  };
+        //  for( let [k,y] of Object.entries(r)){
+        //     console.log(`${k}=${y}`);
+        //  }
+
+
+        //destructuring of object(unpack)
+        // let oo = {
+        //     name:"pawan",
+        //     lname:"bamjan",
+        // };
+        // const{name,lname}=oo;
+        // console.log(name);
+        // console.log(lname);
+        // console.log(oo);
+
+        ////spread operator(...)to copy one to another object
+        // let p1 = {
+
+        // };
+        // let p2 = {
+        //     name:"pawan",
+        // };
+        // let p3 = {
+        //     lname:"killer",
+        // }
+        // p1 = {...p2,...p3};
+        // // Object.assign(p1,p2);      (both do same work)
+        // console.log(p1);
+
+        // create empty array and copy the another array
+        // let sam=[];
+        // let ram=[
+        //     "name",1,"roll"
+        // ];
+        // sam=[...ram];
+        // console.log(sam);
+
+                // assign
+        // let p1 = {};
+        // let p2 = {
+        //     name : "jerk",
+        // };
+        // Object.assign(p1,p2);
+        // console.log(p1);
+
+            //entries
+        // let p1={
+        //     name:"sanjeev",
+        //     lname:"tamang",
+        // };
+        // let p2 = Object.entries(p1);
+        // console.log(p2);
+
+            //values
+        // let r1={
+        //     name:"pawanii",
+        //     lname:"lama",
+        // };
+        // let r2 = Object.values(r1);
+        // console.log(r2);
+
+            //groupBy
+        
+
+    //1)function to reduce nested array to single array
+        
+        // let nes_array = [
+        //     [1,2,3,4,5],["hello","bye"]
+        // ];
+        // let red_uce = () => {
+        //     let res = nes_array.reduce((a,b) => {
+        //         return [...a,...b];
+        //     })
+        //     console.log("combined array = "+res);
+        // }
+        // red_uce();
+
+    //2)function using filter to return string longer than 5 char from array of string
+        
+        // let string_of_array = ["hello","killer","wanted","bounty","GOD"];
+        // let clear = () => {
+        //     let filterd = string_of_array.filter((d)=>{
+        //         if(d.length>5){
+        //             return d;
+        //         }
+        //     })
+        //     console.log("string longer than 5 : "+filterd);
+        // }
+        // clear();
+
+    //3)function that deleted the specified property from an object
+
+        // let del = "";
+        // let str = "";
+        // let person = {
+        //     name : "hari",
+        //     lname : "luitel",
+        //     age : 39,
+        //     nationality : "nepali",
+        // };
+        // console.log("Before delete : "+person);
+
+        // let del_ete = () => {
+        //     for ( let key in person){
+               
+        //         str = str+" "+key;
+                
+        //     }
+        //     alert("From this which do u want to delete //"+str);
+        //      del = prompt("enter what you want to delete");
+        //      delete person[del];
+        //      console.log("After delete : "+person);
+        // }
+        // del_ete();
+
+    //4)function that creates new object form Object.create and add additional properties
+        
+        // let mark = {
+        //     science : 72,
+        //     english : 55,
+        //     nepali : 47, 
+        // };
+        // let create = (mark) => {
+        //     let add_mark = Object.create(mark);
+        //     console.log(add_mark);
+        //     add_mark.math = 73;
+        //     add_mark.computer = 47;
+        //     console.log(add_mark);
+        // }
+        // create(mark);
+
+    //5) function that uses the object.key to count the number of property
+        
+        // let mark = {
+        //     science : 72,
+        //     english : 55,
+        //     nepali : 47, 
+        // };
+        // let count = () => {
+        //     let num = Object.keys(mark);
+        //     console.log("The number of property = "+num.length);
+        // }
+        // count();
+
+    //6) function that usess Object.assign two object to merge in one
+        
+        // let price = {
+        //     laptop : 77000,
+        //     phone : 22000,
+        //     tv : 55000,
+        // };
+        // let football = {
+        //     boots : 1200,
+        //     gloves : 2200,
+        //     ball : 1500,
+        // };
+        // let combine = () =>{
+        //     let holder = Object.assign(price,football);
+        //     console.log(holder);
+        // }
+        // combine();
+
+    //7)  function that usess spread operator to join two object in one
+        
+        //  let price = {
+        //     laptop : 77000,
+        //     phone : 22000,
+        //     tv : 55000,
+        // };
+        // let football = {
+        //     boots : 1200,
+        //     gloves : 2200,
+        //     ball : 1500,
+        // };
+        // let combine = () =>{
+        //     let holder = {...price,...football};
+        //     console.log(holder);
+        // }
+        // combine();
+
+        //8)function that uses hasOwnProperty to check property exist in object
+
+            // let nepal = {
+            //     mountain : 1310,
+            //     river : 6000,
+            //     lake : 5300,
+            //     language : 123,
+            // };
+            // let check = () => {
+            //     let bool = nepal.hasOwnProperty("lake");
+                
+            //     if(bool){
+            //         console.log("Property exist");
+            //     }
+            //     else{
+            //         console.log("Property doesnot exist");
+            //     }
+            // }
+            // check();
+
+            //this keyword
+
+            // let arr = [
+            //     [
+            //         {
+            //             name:"bimal",
+            //             age:22,
+            //         },
+            //         {
+            //             name:"bishal",
+            //             age:21,
+            //         },
+            //         {
+            //             name:"samir",
+            //             age:23,
+            //         },
+            //     ],
+            // ];
+            // console.log(arr[0][0].name);
+            // function ob(ob){
+            //     obb(ob[0]);
+            // }
+            // ob(arr);
+            // function obb(ok){
+            //     for(let i = 0; i<3;i++){
+            //     os(ok[i]);
+
+            //     }
+            // }
+            // function os(d){
+            //     console.log(d.name);
+            // }
+    </script>
+</body>
+</html>

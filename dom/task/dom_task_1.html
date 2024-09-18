@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="baap">
+        <!-- <form action="" id="form">
+            <div>
+                <label for="">Enter Email</label>
+                <input type="text" id="email">
+            </div>
+            <div>
+                <label for="">Enter Password</label>
+                <input type="password" id="pass">
+            </div>
+            <div>
+                <button>submit</button>
+            </div>
+        </form> -->
+    </div>
+    <script>
+         //1.1)create registration forn that validates email and password field . use submit event
+
+            // let form = document.getElementById("form");
+            // let email = document.getElementById("email");
+            // let pass = document.getElementById("pass");
+
+           
+            // form.addEventListener("submit",function(){
+            //     let evalve = email.value;
+            //     let pvalue = pass.value;
+                
+            //     if( evalve.includes("@","com") && pvalue.length>=8){
+            //         document.write("You inserted valid data");
+            //     }
+            //     else{
+            //         document.write("Please retry your data entry has faulty");
+            //     }
+            // })
+
+        //1.2) change background color of div to yellow when the mouse is over and revrse when mouse is out
+
+            // let baap = document.getElementById("baap");
+            // let p = document.createElement("p");
+            // p.innerHTML="Drag here";
+            // baap.appendChild(p);
+
+            // baap.addEventListener("mouseover",function(){
+            //     baap.style.backgroundColor = "yellow";
+            // })
+            
+            // baap.addEventListener("mouseout",function(){
+            //     baap.style.backgroundColor = "white";
+            // })
+
+
+        //1.3)create a box that increase its size by 10px when its double clicked
+
+            // let baap = document.getElementById("baap");
+            // let box = document.createElement("div");
+            // let h1 = document.createElement("h1");
+            // h1.innerHTML = "Double_click the box to increase its size";
+            // baap.appendChild(h1);
+            // box.style.height="50px";
+            // box.style.width="50px";
+            // box.style.backgroundColor = "gray";
+            // baap.appendChild(box);
+            // let num = 50;
+            
+            // box.addEventListener("dblclick",()=>{
+            //     num += 10;
+            //     box.style.height=`${num}px`;
+            //     box.style.width=`${num}px`;
+            // })
+
+
+        //1.4)in a form put a input field and when clicked esc key input field in emptyed
+
+            // let baap = document.getElementById("baap");
+            // let form = document.createElement("form");
+            // baap.appendChild(form);
+            // let input = document.createElement("input");
+            // input.setAttribute("type","text");
+            // form.appendChild(input);
+            // let p = document.createElement("p");
+            // form.appendChild(p);
+
+            // input.addEventListener("input",()=>{
+            //     let value = input.value;
+            //     p.innerHTML = "You wrote: " + value;
+                
+            // })
+            // document.addEventListener("keydown",(event)=>{
+            //     if(event.key == "Escape"){
+            //         input.value="";
+            //         p.innerHTML = "";
+            //     }
+               
+            // })
+            
+
+        //1.5)create list and when it is clicked change them to their text color to blue
+
+            // let baap = document.getElementById("baap");
+            // let ul = document.createElement("ul");
+            // baap.appendChild(ul);
+            // for(let i=1;i<=5;i++){
+            //     let li = document.createElement("li");  
+            //     li.setAttribute("class","item");
+            //     li.innerHTML=`item[${i}]`;
+            //     ul.appendChild(li);
+            // }
+            // let hold = document.querySelectorAll(".item");
+            // hold.forEach((data)=>{
+            //     data.addEventListener("click",function(){
+            //         data.style.color = "blue";
+            //     })
+            // })
+    </script>
+</body>
+</html>

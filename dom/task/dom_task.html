@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="parent">
+        <p id="ptag"></p>
+    </div>
+    <script>
+        //1)check attribute is present or not using function
+
+            // let para = document.getElementById("ptag");
+            // let check = () => {
+            //     if(para.getAttribute("class")){
+            //         console.log("Class exists !");
+            //     }
+            //     else{
+            //         console.log("Class doesnot exists");
+            //     }
+            // }
+            // check();
+
+        
+        //2)function when called creates p tag with text hello world and append p tag on div named container
+
+            // let main = document.getElementById("parent");
+            // let div = document.createElement("div");
+            // div.setAttribute("id","container");
+            // main.appendChild(div);
+            // let button = document.createElement("button");
+            // button.appendChild(document.createTextNode("Create"));
+            // div.appendChild(button);
+            
+            // button.addEventListener('click',function(){
+            //     let p = document.createElement("p");
+            //     p.innerHTML = "Hello, World !";
+            //     div.appendChild(p);
+            // })
+
+
+        //3)remove first element of li with a function called by button
+
+            // let main = document.getElementById("parent");
+            // let ul = document.createElement("ul");
+            // ul.setAttribute("id","mylist")
+            // main.appendChild(ul);
+            // for ( let i = 1; i<=3;i++){
+            //     let li = document.createElement("li");
+            //     li.innerHTML = `Item ${i}`;
+            //     ul.appendChild(li);
+            // }
+            // let button = document.createElement("button");
+            // button.innerHTML = "Delete";
+            // main.appendChild(button);
+            
+            // button.addEventListener('click',function(){
+            //     ul.firstChild.remove();
+            // })
+
+
+        //4)wap to take array of string and append the string in li to a ul id mylist
+
+            // let main = document.getElementById("parent");
+            // let array = [];
+            // let c = "";
+            // do{
+            //     let str = prompt("Enter a string in array");
+            //     array.push(str);
+            //     c = prompt("Enter 'y' to add more string");
+            // }while(c=='y');
+            // console
+            // let ul = document.createElement("ul");
+            // ul.setAttribute("id","mylist");
+            // main.appendChild(ul);
+
+            // for(i=0;i<array.length;i++){
+            //     let li = document.createElement("li");
+            //     li.innerHTML = `${array[i]}`;
+            //     ul.appendChild(li);
+            // }
+
+
+        //5)button to add div with id container and another button to remove the last div
+        
+            // let main = document.getElementById("parent");
+            // let add = document.createElement("button");
+            // add.innerHTML = "ADD";
+            // main.appendChild(add);
+            // let remove = document.createElement("button");
+            // remove.innerHTML = "REMOVE";
+            // main.appendChild(remove);
+
+            // add.addEventListener("click",function (){
+            //     let div = document.createElement("div");
+            //     main.appendChild(div);
+            //     let p = document.createElement("p");
+            //     p.innerHTML = "  Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint enim quasi tenetur consectetur ipsum, facilis possimus dolorem excepturi est nihil eum dicta doloribus expedita ea eligendi odio magnam incidunt veniam!";
+            //     div.appendChild(p);
+            // })
+
+            // remove.addEventListener('click',function (){
+            //     main.lastChild.remove();
+            // })
+
+
+
+       
+    </script>
+  
+</body>
+</html>

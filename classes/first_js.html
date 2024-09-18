@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // let, var , const =variable
+        // let a where a is identifier
+        /*
+            Types of JavaScript Operators
+                There are different types of JavaScript operators:
+
+                    Arithmetic Operators
+                    Assignment Operators
+                    Comparison Operators
+                    String Operators
+                    Logical Operators
+                    Bitwise Operators
+                    Ternary Operators
+                    Type Operators
+
+                1) Arithmetic operators are:(+,-,*,/,%,++,--,**)
+                    
+                    Example:
+        */
+                    let a=12;
+                    let b=6;
+                    let c=a+b;
+                    console.log(`The sum of ${a} and ${b} is ${c}`) //output:18
+                    //c=a-b;
+                    //console.log(c); output:6
+                    //c=a*b;
+                    //console.log(c); output:72
+                    //c=a/b;
+                    //console.log(c); output:2
+                    //c=a%b;
+                    //console.log(c); output:0
+                    //c=++a;
+                    //console.log(c); output:13
+                    //c=--b;
+                    //console.log(c); output:5
+                    //c=b**2;
+                    //console.log(c); output:25
+
+            /*  2)Assignment Operator are(=,+=,-=,*=,/=,%=,**=)
+
+                Example
+            */
+                let d=5;
+                console.log("The value of d is "+d);
+                let dd = 10;
+                dd += 5;
+                // console.log(dd);  output:15
+
+            /*  3)Comparison Operators are(==,===,!=,!==,<,>,<=,>=)
+
+                Example
+            */
+                let e=5;
+                let ee=6;
+                let eee= e>ee;
+                console.log(eee) //output:false
+                //eee= e<ee;
+                //console.log(eee); output::true
+                // eee= e===ee;
+                // console.log(eee); //output::false
+                // eee= e!==ee;
+                // console.log(eee); //output::true
+
+             /*  4) Logical Operators are(&&,||,!)
+
+                Example
+            */
+                let f=5;
+                let fff=4
+                let ff=6;
+                if(f>ff && f>fff){
+                    console.log("f is greatest");
+                }
+                else{
+                    console.log("f is not greatest");
+                }
+                /*
+                    if(f>ff || f>fff){
+                        console.log("f is greatest");
+                    }
+                    else{
+                        console.log("f is not greatest");
+                    }
+                        output:f is greatest
+                */
+
+             /*  5) String Operators :
+
+                Example
+            */
+                let text1 = "John";
+                 let text2 = "Doe";
+                let text3 = text1 + " " + text2;
+                console.log(text3); //output:John Doe
+
+                 /*
+                    let z = "Hello" + 5;
+                    console.log(z); //output:Hello5               
+                */
+            /*  6)Ternary operator(?):
+                
+                Example:
+            */
+                let n1=5;
+                let n2=4;
+                n1>n2 ? console.log("n1 is greater") : console.log("n2 is greater");
+
+            //loop:
+                //for, while, do while,
+                
+            // example
+
+            for(let i=1;i<=5;i++){
+                console.log(i);//output: 1 2 3 4 5 
+            }
+
+    </script>
+</body>
+</html>

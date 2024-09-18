@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document_asynawait</title>
+    <style>
+        .baap{
+            display: flex;
+            gap:20px;
+            flex-wrap: wrap;
+        }
+        *{
+            margin: 0%;
+            padding: 0%;
+            box-sizing: border-box;
+        }
+        .card{
+            width: 20vw;
+            height: 42vh;
+            box-shadow: 3px 3px 3px black;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            align-items: center;
+        }
+        .card_img{
+            width: 18vw;
+            height: 19vh ;
+            background-color: blueviolet;
+        }
+        span{
+            font-size: 22px;
+
+        }
+        .card_name span{
+            font-weight: bold;
+            font-size: 27px;
+
+        }
+        .card_data{
+            display: flex;
+            gap:40px;
+        }
+        button{
+            width: 120px;
+            height: 40px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <div class="baap" id="baap">
+        
+    </div>
+    <script>
+        let baap = document.getElementById("baap");
+          async function fetchData() {
+            try{
+            let response = await fetch("https://mdn.github.io/learning-area/javascript/apis/fetching-data/can-store/products.json");
+            let data = await response.json();
+                display(data);
+                }
+                catch(error){    // catch reject
+                    console.log(error);
+
+                }
+          }
+            function display(arr){
+                arr.forEach((data)=>{
+                    baap.innerHTML += card(data);
+                })
+            }
+            function card(obj){
+                return `
+                    <div class="card">
+            <div class="card_img">
+                <img src="" alt="">
+            </div>
+            <div class="card_name">
+                <span>${obj.name}</span>
+            </div>
+            <div class="card_data">
+                <div class="card_data_price">
+                    <span>$ ${obj.price}</span>
+                </div>
+                <div class="card_data_type"> 
+                    <span>${obj.type}</span>
+                </div>
+            </div>
+            <div><button>Buy Now</button></div>
+        </div>
+                `;
+            }
+            fetchData();
+    </script>
+</body>
+</html>

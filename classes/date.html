@@ -1,0 +1,149 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0%;
+            padding: 0%;
+            box-sizing: border-box;
+        }
+        p{
+            font-size: 170px;
+            color: white;
+           
+        }
+        .text{
+            display: flex;
+            background-color: black;
+            height: 39vh;
+            width: 54.8vw;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            top: 18%;
+            left: 6%;
+        }
+        .img{
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="img">
+            <img src="https://miro.medium.com/v2/resize:fit:1024/0*laQ_VNO7SXqF4N2X.jpg" alt="">
+            <div class="text">
+                <p id="display">
+    
+                </p>
+            </div>
+        </div>
+        <div>
+            <button id="show">Show</button>
+        </div>
+        <div>
+            <button id="hide">Hide</button>
+        </div>
+        
+    </div>
+    <script>
+        let show = document.getElementById("show");
+        let hide = document.getElementById("hide");
+        let display = document.getElementById("display");
+        let infinite = 0;
+
+        let loop = () => {
+              infinite = setInterval(()=>{
+                 let date = new Date();
+                display.innerHTML=`${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`;
+            },1000)
+        }
+        let loop_cut = () => {
+            clearInterval(infinite);
+            display.innerHTML="";
+        }
+        show.addEventListener('click',()=>{
+            loop();
+        })
+        hide.addEventListener('click',()=>{
+            loop_cut();
+        })
+        
+    </script>
+</body>
+</html> -->
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let date = new Date;
+
+        // let delta = date.getDate();  // gives date 
+        // console.log(delta);
+
+        // let delta = date.getDay(); // gives day of week sunday = 0 and saturday is 6
+        // console.log(delta);
+
+        // let delta = date.getFullYear();  // gives year
+        // console.log(delta);
+
+        // let delta = date.getTime(); //returns the number of milliseconds since January 1, 1970
+        // console.log(delta);
+
+        // let delta = date.getTimezoneOffset(); // returns the time difference between UTC time and local time, in minutes(utc nepal 5:45)
+        // console.log(delta);
+ 
+        // let delta = date.getUTCDate(); //  returns the day of the month of a date, according to UTC:
+        // console.log(delta);
+
+        // let delta = date.getUTCHours();
+        // console.log(delta);
+
+        // date.setDate(15); // sets date manuall to user
+        // console.log(date);
+
+        // let delta = date.toDateString(); //returns the date of a date object as a readable string:
+        // console.log(delta);
+        
+        // let delta = date.toISOString(); // returns a date as string, using the ISO standard:
+        // console.log(delta);
+         
+        // let delta = date.toJSON(); // returns a date as a string, using JSON date formatting:
+        // console.log(delta);
+
+        // let delta = date.toLocaleDateString(); // date, as a string, using locale conventions:
+        // console.log(delta);
+
+        // let delta = date.toLocaleString(); // returns a date as a string, using locale settings:
+        // console.log(delta);
+
+        // let delta = date.toLocaleTimeString();//returns the time portion of a date, as a string, using locale conventions:
+        // console.log(delta);
+
+        // let delta = date.toString();  //returns a date object as a string:
+        // console.log(delta);
+
+        // let delta = date.toTimeString(); //returns the time portion of a date object as a string:
+        // console.log(delta);
+ 
+        // let delta = date.toUTCString(); // returns a date object as a string, according to UTC:
+        // console.log(delta);
+
+        // let delta = date.valueOf(); // returns the primitive value of a date object:The primitive value is returned as the number of millisecond since midnight January 1, 1970 UTC.
+        // console.log(delta);
+
+        // let delta = new date.getVarDate();
+        // console.log(delta);
+    </script>
+</body>
+</html> -->

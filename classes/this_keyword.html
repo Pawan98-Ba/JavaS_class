@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //this keyword = who called me (refers to object)
+        // let obj = {
+        //     name : "pawan",
+        //     address : "ramkot",
+        //     detail:function(){
+        //         return (`my name is ${this.name} and my address is ${this.address}`); 
+        //     }
+        // };
+        // console.log(obj.detail());
+        // console.log(this); //global scope // call window
+
+
+        // create one obj car with the properties (model , color , gear , steering , 
+        // method -> running -> this car model ... is running in the gear ....)
+
+        let car = {
+            model : "maruti 800",
+            color : "white",
+            gear : 5,
+            steering : "Up hill",
+            running:function(){
+                return `This car of model ${this.model} is running in gear ${this.gear} towards ${this.steering}`;
+            }
+        };
+        console.log(car.running());
+        
+    </script>
+</body>
+</html>

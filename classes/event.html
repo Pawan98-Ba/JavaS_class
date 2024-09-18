@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event in jS</title>
+</head>
+<body>
+    <form id="form">
+        <div>
+            <label for="">Enter First Name</label>
+            <input type="text" id="fname">
+        </div>
+        <div>
+            <label for="">Enter Last Name</label>
+            <input type="text" id="lname">
+        </div>
+        <div>
+            <label for="">Phone No.</label>
+            <input type="text" id="ph">
+        </div>
+        <div>
+            <label for="">Address</label>
+            <input type="text" id="add">
+        </div>
+        <div>
+            <label for="">Enter Email</label>
+            <input type="text" id="emal">
+        </div>
+        <div>
+            <button>submit</button>
+        </div>
+    </form>
+    <script>
+
+        let form = document.getElementById("form");
+        form.addEventListener("submit",function(){
+            console.log("hello");
+        })
+        let idd = document.getElementById("fname");
+        idd.addEventListener("input",()=>{
+            
+            console.log(idd.value);
+        })
+
+        window.addEventListener("load",function(){
+            ok();
+            alert("hello");
+
+        })
+        function ok(){
+            alert("hello");
+        }
+        // ok();
+        /*
+            Event In JS
+
+                MouseEvent:
+                    .click
+                    .dblclick
+                    .mouseout
+                    .mousedown
+                    .mouseup
+
+
+                Keyword:
+                    .keydown
+                    .keyup
+                    .keypress
+
+
+                From Events:
+                    .submit
+                    .focus
+                    .blur
+                    .input
+
+
+                Document/Window Event:
+                    .load //window ma matra
+                    .scroll 
+                    .resize // window ma matra
+        
+        */
+
+         
+     
+    </script>
+</body>
+</html>

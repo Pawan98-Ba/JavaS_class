@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Back</title>
+</head>
+
+<body>
+    <div id="baap">
+    </div>
+    <button id="go_back">GO BACK</button>
+
+    <script>
+        let baap = document.getElementById("baap");
+        let p = document.createElement("p");
+        let name = localStorage.getItem("name");
+        let email = localStorage.getItem("email");
+        let address = localStorage.getItem("address");
+        p.innerHTML = "Name : "+name+"<br>"+"Email : "+email+"<br>"+"Address : "+address;
+        baap.appendChild(p);
+
+
+        let back = document.getElementById("go_back");
+        back.addEventListener("click",function(){
+            localStorage.removeItem("name");
+            localStorage.removeItem("email");
+            localStorage.removeItem("address");
+            window.location.href="local_task_home.html";
+        })
+    </script>
+</body>
+</html>

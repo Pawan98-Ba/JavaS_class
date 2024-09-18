@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CLass_list</title>
+    <style> 
+        .before{
+            width: 200px;
+            height: 50px;
+            font-size: 20px;
+            color: white;
+            background-color: black;
+            border-radius: 40%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .after{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 200px;
+            height: 50px;
+            font-size: 20px;
+            color: white;
+            background-color: red;
+            border-radius: 20%;
+            font-weight: bold;
+        }
+        #parnt{
+            height: 20vh;
+        }
+    </style>
+</head>
+<body>
+    <div id="parent">
+
+    </div>
+    <script>
+        let div = document.getElementById("parent");
+        // let p = document.createElement("p");
+        // let text = document.createTextNode("k xha");
+        // p.appendChild(text);
+        // div.appendChild(p);
+
+    //  create , remove , toggle
+        // p.classList.add("ok"); // create
+        // p.classList.remove("ok"); //remove
+        // div.classList.toggle("ok"); // toggle pulls ant put class as contunity
+
+    //make a changing sub button
+
+
+        let but = document.createElement("div");
+        but.appendChild(document.createTextNode("Subscribe"));
+        div.appendChild(but);
+        let num = 1;
+
+        but.addEventListener("click",function(){
+            num++;
+            if(num%2==0){
+                but.innerHTML="Subscribed";
+                but.classList.remove("before");
+                but.classList.add("after");
+            }
+            if(num % 2 == 1){
+                but.innerHTML="Subscribe";
+                but.classList.remove("after");
+                but.classList.add("before");
+            }
+        })
+        if(num % 2 == 1){
+            but.classList.add("before");
+        }
+
+        /*
+        //another way
+        but.classList.add("before");
+        but.addEventListener("click",function(){
+            if(but.innerHTML == "Subscribe"){
+                but.classList.remove("before");
+                but.classList.add("after");
+                but.innerHTML = "Subscribed";
+               }
+            else if(but.innerHTML == "Subscribed"){
+                but.classList.replace("after","before");
+                but.innerHTML = "Subscribe";
+            }
+        })
+        */
+
+        
+    </script>
+</body>
+</html>    

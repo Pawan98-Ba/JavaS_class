@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .cell{
+            border: 8px solid black;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            gap:20px;
+            width: 15vw;
+            height: 80vh;
+        }
+        .battery{
+            background-color: blue;
+            margin-left: 2.5vw;
+            width: 10vw;
+            height: 5vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .battery:nth-child(1){
+            margin-top: 2.3vh;
+        }
+        p{
+            color: white;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="holder" class="cell">
+        
+    </div>
+    <script>
+           let num = 0;
+            let container = document.getElementById("holder");
+            let num1 = 0;
+        let charge = setInterval(()=>{
+            num++;
+            if(num==10){
+                num1+=10;
+                container.innerHTML=`<div class="battery"><p>${num1}%</p></div>`+container.innerHTML;
+                num=0;
+            }
+        
+            if(num1==100){
+                terminate();
+            }
+        },200)
+        function terminate(){
+            clearInterval(charge);
+        }
+    </script>
+</body>
+</html>

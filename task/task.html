@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //1) loop to show all the character of string using for of
+            // let string = prompt("Enter a sentence");
+            // for(let char of string){
+            //     document.write(char+"<br>");
+            // }
+
+        //2) take array of number and find minimun
+            // let array = [1,3,33,4,6];
+            // let char = "y";
+            // while(char=="y"){
+            //     let n1=+prompt("enter number for array");
+            //     array.push(n1);
+            //     char = prompt("if u want to add number press'y'");
+            // }
+            // let mini = (arr) =>{
+            //     arr.sort();
+            //     alert("The minimum value in array is "+arr[0]);
+            // }
+            // mini(array);
+
+        //3)merge two array 
+            // let array1 = [1,2,3,4,5,6];
+            // let array2 = ["one","two","three","four"];
+           
+            // let me_rge = (a1,a2) => {
+            //     let a3 = a1.concat(a2);
+            //     console.log(a3);
+            // }
+            // me_rge(array1,array2);
+
+        //4) give the index of array element and if absent of array element give -1(function)
+            // let array = [1,2,4,5,55,7,8,9];
+            
+            // let num = +prompt("give a number ");
+            // let check = (a1,n) => {
+            //     if(a1.includes(n)){
+            //         alert("the position of "+n+" is "+a1.indexOf(n));
+            //     }
+            //     else{
+            //         alert("-1");
+            //     }
+            // }
+            // check(array,num);
+
+        //5) identify longest word in array 
+            // let stirng = prompt("Enter a sentence");
+            // let holder = "";
+            // let longest = (a1)=>{
+            //     let hold = a1.split(" ");
+            //     for(str of hold){
+            //         if(holder.length<str.length){
+            //             holder = str;
+            //         }
+            //     }
+            //     alert("longest word is "+holder);
+            // }
+            // longest(stirng);
+
+        //6) take word of array and concat them using for of
+            let array = [];
+            let stirng =""
+            let char = "y";
+            while(char=="y"){
+                let n1=prompt("enter words for array");
+                array.push(n1);
+                char = prompt("if u want to add word press'y'");
+            }
+            let con_cat = (a1) => {
+                for(arr of a1){
+                    stirng=stirng+" "+arr;
+                }
+                alert(stirng);
+            }
+            con_cat(array);
+
+        //7)to uppercase for array of string
+            // let array = [];
+            // let char = "y";
+            // while(char=="y"){
+            //     let n1=prompt("enter words for array");
+            //     array.push(n1);
+            //     char = prompt("if u want to add word press'y'");
+            // }
+            // let hold = array.map((str)=>{
+            //     return (str.toUpperCase());
+            // })
+            // console.log(hold);
+
+        //8)filter out the array of names whose lenght is more then 5
+    //         let array = [];
+    //         let char = "y";
+    //         while(char=="y"){
+    //             let n1=prompt("enter name for array");
+    //             array.push(n1);
+    //             char = prompt("if u want to add name press'y'");
+    //         }
+    //         let hold = array.filter((n)=>{
+    //             if(n.length>4){
+    //                 return n;
+    //             }
+    //         })
+    //         console.log(hold);
+    // </script>
+</body>
+</html>

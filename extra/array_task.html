@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script>
+    <style>
+        *{
+            padding: 0%;
+            margin: 0%;
+            box-sizing: border-box;
+        }
+        .flicker{
+            display: grid;
+            justify-content: space-around;
+            grid-template-areas: 
+            "i1 i2"
+            "i3 i3";
+            height: 100vh;
+        }
+        .box{
+            display: flex;
+            flex-direction: column;
+            gap:20px;
+            align-items: center;
+            margin-top: 20px;
+        }
+        #first{
+            grid-area: i1;
+        }
+        #second{
+            grid-area: i2;
+        }
+        #third{
+            grid-area: i3;
+        }
+        input{
+            width: 240px;
+            height: 30px;
+            padding: 10px;
+        }
+        button{
+           padding: 10px 40px;
+        }
+    </style>
+</head>
+<body>
+    <div class="flicker">
+        <div class="box" id="first">
+            <label for="">If you want to add data ,Insert your data here !</label>
+            <input type="text" id="raw">
+            <button onclick="add()">Submit</button>
+        </div>
+        <div class="box" id="second">
+            <label for="">Click here to eliminate your last entry data !</label>
+            <button onclick="eliminate()">Eliminate</button>
+        </div>
+        <div class="box" id="third">
+            <h1>Your Data </h1>
+            <p id="place" ></p>
+        </div>
+    </div>
+    <script>
+        let data = [];
+        let raw = document.getElementById('raw');
+        
+        function add(){
+            data.push(raw.value);
+            document.getElementById("place").innerHTML = data;
+            console.log(raw);
+
+            raw.value= "";
+           
+         
+            
+        }
+        function eliminate(){           // function delete not possible
+            data.pop();
+            document.getElementById("place").innerHTML = data;
+           
+
+        }
+        
+    </script>
+</body>
+</html>
